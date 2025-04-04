@@ -16,3 +16,21 @@ const UserSchema = new Schema({
     require: true,
     unique: true
   },
+  dte: {
+    type: Date,
+    defaulat: Date.now
+  },
+  name: {
+    type: String,
+    require: true
+  },
+  age: {
+    type: Number,
+    require: false
+  }
+})
+
+const User = mongoose.model('user', UserSchema)
+User.createIndexes()
+
+module.exports = User
