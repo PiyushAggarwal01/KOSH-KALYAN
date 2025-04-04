@@ -40,3 +40,20 @@ res.json({ totalBalance, monthlyIncome, monthlyExpenses, transactions })
   res.status(500).json({ error: 'Internal Server Error' })
 }
 })
+
+// 🟢 Add a transaction
+router.post('/add', fetchUser, async (req, res) => {
+    try {
+      const { amount, category, description, type } = req.body
+      if (!amount || !category || !type) {
+        return res.status(400).json({ error: 'All fields are required' })
+      }
+  
+      const transaction = new Transaction({
+        user: req.user.id,
+        amount: type === 'expense' ? -Math.abs(amount) : Math.abs(amount),
+        category,
+        description,
+        type
+      })
+  
