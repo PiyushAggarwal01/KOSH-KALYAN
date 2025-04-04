@@ -31,7 +31,7 @@ function Sidebar (props) {
         <div className='lg:hidden'>
           <div className='flex items-center justify-between bg-white dark:bg-gray-800 px-4 py-2 shadow-sm'>
             <Link to='/' className='text-xl font-bold text-indigo-600 dark:text-indigo-400'>
-              Sampatti
+              KoshKalyan
             </Link>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -88,7 +88,7 @@ function Sidebar (props) {
           <div className='flex flex-col flex-grow bg-white dark:bg-gray-800 pt-5 pb-4 overflow-y-auto'>
             <div className='flex items-center flex-shrink-0 px-4'>
               <Link to='/' className='text-xl font-bold text-indigo-600 dark:text-indigo-400'>
-                Sampatti
+                KoshKalyan
               </Link>
             </div>
             <nav className='mt-5 flex-1 px-2 space-y-1'>

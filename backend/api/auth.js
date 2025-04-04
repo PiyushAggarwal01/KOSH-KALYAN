@@ -104,8 +104,10 @@ router.post('/login', [
 
     const authToken = jwt.sign(data, JWT_SECRET)
     success = true
+    console.log({name: user.name, email: user.email, username: user.username, age: user.age})
     res.json({ success, authToken, name: user.name, email: user.email, username: user.username, age: user.age })
   } catch {
+    console.log(errors.messgae)
     console.log(errors.messgae)
     res.status(500).send(errors.message)
   }
