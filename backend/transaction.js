@@ -12,4 +12,11 @@ router.get('/', fetchUser, async (req, res) => {
       let totalBalance = 0
       let monthlyIncome = 0
       let monthlyExpenses = 0
+
+      const currentMonth = new Date().getMonth()
+    const currentYear = new Date().getFullYear()
+
+    transactions.forEach((transaction) => {
+      totalBalance += transaction.amount
+
   
