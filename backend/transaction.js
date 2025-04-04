@@ -19,4 +19,24 @@ router.get('/', fetchUser, async (req, res) => {
     transactions.forEach((transaction) => {
       totalBalance += transaction.amount
 
+      const transactionDate = new Date(transaction.createdAt)
+      if (transactionDate.getMonth() === currentMonth && transactionDate.getFullYear() === currentYear) {
+        if (transaction.amount > 0) {
+          monthlyIncome += transaction.amount
+        } else {
+          monthlyExpenses += Math.abs(transaction.amount)
+        }
+      }
+    })
   
+    res.json({ totalBalance, monthlyIncome, monthlyExpenses, transactions })
+} catch (error) {
+  res.status(500).json({ error: 'Internal Server Error' })
+}
+})
+
+res.json({ totalBalance, monthlyIncome, monthlyExpenses, transactions })
+} catch (error) {
+  res.status(500).json({ error: 'Internal Server Error' })
+}
+})
