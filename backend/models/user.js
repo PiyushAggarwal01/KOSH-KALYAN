@@ -16,9 +16,9 @@ const UserSchema = new Schema({
     require: true,
     unique: true
   },
-  dte: {
+  date: {
     type: Date,
-    defaulat: Date.now
+    default: Date.now
   },
   name: {
     type: String,
