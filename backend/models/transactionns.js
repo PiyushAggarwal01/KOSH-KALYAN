@@ -12,20 +12,19 @@ const TransactionSchema = new mongoose.Schema(
       required: true
     },
     category: {
-        type: String,
-        required: true
-      },
-      description: {
-        type: String
-      },
-      type: {
-        type: String,
-        enum: ['income', 'expense'],
-        required: true
-      },
+      type: String,
+      required: true
     },
-},
-{ timestamps: true } // This adds createdAt and updatedAt fields
+    description: {
+      type: String
+    },
+    type: {
+      type: String,
+      enum: ['income', 'expense'],
+      required: true
+    },
+  },
+  { timestamps: true } // This adds createdAt and updatedAt fields
 )
 
 module.exports = mongoose.model('Transaction', TransactionSchema)
