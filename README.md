@@ -48,4 +48,4 @@ Before running KoshKalyan, ensure you have the following installed:
 
 ### Step 1: Clone the Repository
 ```bash
-git clone hhttps://github.com/spam-prakash/Kosh-Kalyan.git
+git clone hhttps://github.com/PiyushAggarwal01/Kosh-Kalyan.git
